@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--/*@thymesVar id="title" type="java.lang.String"*/-->
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Markdown</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="file:///home/felix/IdeaProjects/documents/markdown.css" />
+</head>
+<!--/*@thymesVar id="markdown" type="java.lang.String"*/-->
+<body>
+    <main class="md-container">
+        <header class="md-header">
+            <h1 th:text="${title}"></h1>
+            <h2>
+                <!--/*@thymesVar id="authors" type="java.util.List<String>"*/-->
+                <span th:each="author : ${authors}" th:text="${author}" class="md-author"></span>
+            </h2>
+        </header>
+        <div class="md-body" th:utext="${markdown}">
+
+        </div>
+        <footer class="md-footer">
+            <div class="md-left">
+                <!--/*@thymesVar id="version" type="String"*/-->
+                <span th:if="${version}">
+                    Ver.
+                    [[${version}]]
+                </span>
+            </div>
+            <div class="md-right">
+                Built [[${#dates.format(#dates.createNow(), 'dd.MM.yyyy HH:mm:ss')}]]
+            </div>
+        </footer>
+    </main>
+</body>
+</html>

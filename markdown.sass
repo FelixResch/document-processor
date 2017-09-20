@@ -1,0 +1,71 @@
+$border-color: #adadad
+$table-odd-row: #efefef
+
+html, body
+  counter-reset: h2counter
+  font-family: 'Noto Sans', sans-serif
+  background-color: white
+
+  .md-container
+    max-width: 1020px
+    margin-left: auto
+    margin-right: auto
+
+    .md-header
+
+      h1, h2, h3, h4, h5, h6
+        text-align: center
+
+      .md-author:not(:last-of-type)::after
+        content: ', '
+
+    .md-body
+      table
+        width: 100%
+        border-collapse: collapse
+        border-color: $border-color
+        tr
+          border: 1px solid $border-color
+          td, th
+            border: 1px solid $border-color
+            padding: 8px
+          th
+            text-align: start
+            background-color: #ffffff
+        tbody
+          tr:nth-child(odd)
+            background-color: $table-odd-row
+
+      h1
+        counter-reset: h2counter
+
+      h2::before
+        content: counter(h2counter) ".\0000a0\0000a0"
+        counter-increment: h2counter
+        counter-reset: h3counter
+
+      h3::before
+        counter-increment: h3counter
+        content: counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0"
+
+      a
+        color: blue
+
+      /*ol
+        counter-reset: section
+        list-style-type: none
+
+        li::before
+          counter-increment: section
+
+          content: counters(section, ".") ". "*/
+
+    .md-footer
+      font-size: small
+
+      .md-right
+        float: right
+        display: inline-block
+      .md-left
+        float: left
+        display: inline-block

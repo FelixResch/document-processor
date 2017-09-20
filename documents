@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ $# -eq 1 ]; then
+    case $1 in
+        ("load")
+            gradle fatJar ;;
+        ("clean")
+            rm -rf ~/Documents/documents/**.html ~/Documents/documents/**.pdf;;
+        ("*")
+            echo Unknown operation $1 ;;
+    esac
+else
+    java -Dfile.encoding=UTF-8 -jar build/libs/documents-0.0.1-SNAPSHOT.jar -d ~/Documents/documents/ -t 2
+fi

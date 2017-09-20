@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="documents:test" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="org.web25.felix" external.system.module.type="sourceSet" external.system.module.version="0.0.1-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="kotlin-language" name="Kotlin">
+      <configuration version="3" platform="JVM 1.8" useProjectSettings="false">
+        <compilerSettings />
+        <compilerArguments>
+          <option name="destination" value="$MODULE_DIR$/../../build/kotlin-classes/test" />
+          <option name="noStdlib" value="true" />
+          <option name="noReflect" value="true" />
+          <option name="moduleName" value="documents_main" />
+          <option name="jvmTarget" value="1.8" />
+          <option name="addCompilerBuiltIns" value="true" />
+          <option name="loadBuiltInsFromDependencies" value="true" />
+          <option name="languageVersion" value="1.1" />
+          <option name="apiVersion" value="1.1" />
+          <option name="pluginOptions">
+            <array />
+          </option>
+          <option name="pluginClasspaths">
+            <array />
+          </option>
+        </compilerArguments>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+    <output-test url="file://$MODULE_DIR$/../../out/test/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../src/test">
+      <sourceFolder url="file://$MODULE_DIR$/../../src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../src/test/kotlin" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../src/test/resources" type="java-test-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="documents_main" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jre8:1.1.4-3" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-reflect:1.1.4-3" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-all:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-yaml-front-matter:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.25" level="project" />
+    <orderEntry type="library" name="Gradle: ch.qos.logback:logback-classic:1.2.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.codehaus.groovy:groovy:2.4.12" level="project" />
+    <orderEntry type="library" name="Gradle: commons-cli:commons-cli:1.4" level="project" />
+    <orderEntry type="library" name="Gradle: org.thymeleaf:thymeleaf:3.0.7.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: com.openhtmltopdf:openhtmltopdf-slf4j:0.0.1-RC11" level="project" />
+    <orderEntry type="library" name="Gradle: org.scilab.forge:jlatexmath:1.0.6" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.xmlgraphics:batik-svggen:1.9.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.xmlgraphics:batik-dom:1.9.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.7.1-1" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.module:jackson-module-kotlin:2.7.1-2" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.7.1" level="project" />
+    <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.1.4-3" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jre7:1.1.4-3" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-abbreviation:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-anchorlink:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-aside:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-autolink:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-definition:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-emoji:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-escaped-character:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-footnotes:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-gfm-issues:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-gfm-strikethrough:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-gfm-tables:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-gfm-tasklist:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-gfm-users:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-jekyll-front-matter:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-jekyll-tag:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-ins:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-xwiki-macros:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-superscript:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-tables:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-toc:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-typographic:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-wikilink:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-formatter:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-html-parser:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-jira-converter:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-pdf-converter:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-profile-pegdown:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-util:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-youtrack-converter:0.26.4" level="project" />
+    <orderEntry type="library" name="Gradle: ch.qos.logback:logback-core:1.2.3" level="project" />
+    <orderEntry type="library" name="Gradle: ognl:ognl:3.1.12" level="project" />
+    <orderEntry type="library" name="Gradle: org.attoparser:attoparser:2.0.4.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.unbescape:unbescape:1.1.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: com.openhtmltopdf:openhtmltopdf-core:0.0.1-RC11" level="project" />
+    <orderEntry type="library" name="Gradle: org.scilab.forge:jlatexmath-font-greek:1.0.6" level="project" />
+    <orderEntry type="library" name="Gradle: org.scilab.forge:jlatexmath-font-cyrillic:1.0.6" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.xmlgraphics:batik-awt-util:1.9.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.xmlgraphics:batik-util:1.9.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.xmlgraphics:batik-css:1.9.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.xmlgraphics:batik-ext:1.9.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.xmlgraphics:batik-xml:1.9.1" level="project" />
+    <orderEntry type="library" name="Gradle: xalan:xalan:2.7.2" level="project" />
+    <orderEntry type="library" name="Gradle: xml-apis:xml-apis:1.3.04" level="project" />
+    <orderEntry type="library" name="Gradle: xml-apis:xml-apis-ext:1.3.04" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.7.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.yaml:snakeyaml:1.15" level="project" />
+    <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains:annotations:13.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.nibor.autolink:autolink:0.6.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.jsoup:jsoup:1.10.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.openhtmltopdf:openhtmltopdf-pdfbox:0.0.1-RC9" level="project" />
+    <orderEntry type="library" name="Gradle: com.openhtmltopdf:openhtmltopdf-rtl-support:0.0.1-RC9" level="project" />
+    <orderEntry type="library" name="Gradle: com.openhtmltopdf:openhtmltopdf-jsoup-dom-converter:0.0.1-RC9" level="project" />
+    <orderEntry type="library" name="Gradle: org.javassist:javassist:3.20.0-GA" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.xmlgraphics:xmlgraphics-commons:2.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.xmlgraphics:batik-constants:1.9.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.xmlgraphics:batik-i18n:1.9.1" level="project" />
+    <orderEntry type="library" name="Gradle: xalan:serializer:2.7.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.pdfbox:pdfbox:2.0.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.ibm.icu:icu4j:58.1" level="project" />
+    <orderEntry type="library" name="Gradle: commons-io:commons-io:1.3.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.pdfbox:fontbox:2.0.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.7.1" level="project" />
+    <orderEntry type="library" name="Gradle: commons-logging:commons-logging:1.2" level="project" />
+  </component>
+  <component name="TestModuleProperties" production-module="documents_main" />
+</module>

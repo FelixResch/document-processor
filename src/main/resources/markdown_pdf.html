@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--/*@thymesVar id="title" type="java.lang.String"*/-->
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Markdown</title>
+    <style>
+        @page {
+
+            margin: 10%;
+
+            @bottom-center {
+                content: counter(page);
+                font-family: noto, sans-serif;
+            }
+
+            @bottom-right {
+                font-size: smaller;
+                font-family: noto, sans-serif;
+                content: "Built [[${#dates.format(#dates.createNow(), 'dd.MM.yyyy HH:mm:ss')}]]";
+            }
+
+            @top-left {
+                font-size: smaller;
+                content: "[[${title}]]";
+                font-family: noto, sans-serif;
+            }
+
+            @top-right {
+                font-size: smaller;
+                content: "[[${_authors}]]";
+                font-family: noto, sans-serif;
+            }
+        }
+
+        @font-face {
+            font-family: 'noto';
+            src: url(fonts/Noto_Sans/NotoSans-Regular.ttf);
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'noto';
+            src: url(fonts/Noto_Sans/NotoSans-Bold.ttf);
+            font-weight: bold;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'noto';
+            src: url(fonts/Noto_Sans/NotoSans-BoldItalic.ttf);
+            font-weight: bold;
+            font-style: italic;
+        }
+        @font-face {
+            font-family: 'noto';
+            src: url(fonts/Noto_Sans/NotoSans-Italic.ttf);
+            font-weight: normal;
+            font-style: italic;
+        }
+
+        html, body {
+            font-family: noto, sans-serif;
+        }
+
+        .md-header h1, .md-header h2 {
+            text-align: center;
+        }
+    </style>
+    <style th:if="${version}">
+        @page {
+            @bottom-left {
+                font-size: smaller;
+                font-family: noto, sans-serif;
+                content: "Ver. [[${version}]]";
+            }
+        }
+    </style>
+</head>
+<!--/*@thymesVar id="markdown" type="java.lang.String"*/-->
+<body>
+    <main class="md-container">
+        <header class="md-header">
+            <h1 th:text="${title}"></h1>
+            <h2>
+                <!--/*@thymesVar id="authors" type="java.util.List<String>"*/-->
+                <span th:each="author : ${authors}" th:text="${author}" class="md-author"></span>
+            </h2>
+        </header>
+        <div class="md-body" th:utext="${markdown}">
+
+        </div>
+    </main>
+</body>
+</html>
