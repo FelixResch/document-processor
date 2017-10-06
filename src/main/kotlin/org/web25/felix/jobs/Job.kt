@@ -3,6 +3,7 @@ package org.web25.felix.jobs
 import org.slf4j.LoggerFactory
 import org.web25.felix.documents.singleton
 import java.util.concurrent.Callable
+import kotlin.system.exitProcess
 
 interface Job<T: Any> : Callable<T> {
 
@@ -27,6 +28,14 @@ interface Job<T: Any> : Callable<T> {
                 this.execute(context)
             } catch (t: Throwable) {
                 state = JobState.ERRORED
+                logger.warn("Caught error in job", t)
+                try {
+                    handleError(t)
+                } catch (t1: Throwable) {
+                    logger.error("Caught exception while handling error", t1)
+                    t1.printStackTrace()
+                    exitProcess(1)
+                }
                 throw t
             } finally {
                 state = if(state == JobState.ACTIVE) JobState.FINISHED else state
@@ -34,6 +43,8 @@ interface Job<T: Any> : Callable<T> {
             }
         }
     }
+
+    fun handleError(t: Throwable) {}
 
     val done: Boolean
     get() {

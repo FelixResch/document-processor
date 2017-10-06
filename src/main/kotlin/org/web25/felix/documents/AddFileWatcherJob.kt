@@ -22,7 +22,8 @@ fun addFileWatcher(processableFile: ProcessableFile, jobCreator: JobCreator? = n
 }
 
 data class FileWatcherConfig(val fileName: String, var name: String? = null, var state: FileState = FileState.WAIT, var done: Boolean = false,
-                             var stage: String, var unmodified: Boolean = false) : Config
+                             var stage: String, var unmodified: Boolean = false, var errored: Boolean = false) : Config {
+}
 
 enum class FileState {
     WAIT, PARSED, RENDERED

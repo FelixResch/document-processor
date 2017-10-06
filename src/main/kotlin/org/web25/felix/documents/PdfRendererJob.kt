@@ -39,8 +39,7 @@ class PdfRendererJob (val file: ProcessableFile, parent: Job<Any>? = null, val j
                         TaskListExtension.create(),
                         SuperscriptExtension.create(),
                         InsExtension.create(),
-                        StrikethroughExtension.create(),
-                        MathExtension.create()
+                        StrikethroughExtension.create()
                 )
         )
 

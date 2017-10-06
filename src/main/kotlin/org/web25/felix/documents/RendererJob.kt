@@ -109,6 +109,11 @@ class RendererJob (val file: ProcessableFile, parent: Job<Any>? = null, val jobC
         }
     }
 
+    override fun handleError(t: Throwable) {
+        val fileWatcherConfig = this.file.getConfig(FileWatcherConfig::class)
+        fileWatcherConfig.done = true
+        fileWatcherConfig.errored = true
+    }
 }
 
 fun renderMarkdownToHtml(processableFile: ProcessableFile, jobCreator: JobCreator?): RendererJob {

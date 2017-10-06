@@ -13,7 +13,7 @@ object CommandLineProgressPrinter {
 
     fun print() {
         synchronized(configs) {
-            val modifiedFiles = configs.filter { !it.unmodified }
+            val modifiedFiles = configs//.filter { !it.unmodified }
             print("\u001b[${lastLines}A\r")
             longestName = modifiedFiles.map {
                 val name = it.name
@@ -29,7 +29,9 @@ object CommandLineProgressPrinter {
                     print(spinnerChars[spinnerIndex])
                 } else {
                     if(config.unmodified) {
-                        print("\u001b[33m\u2022\u001b[0m")
+                        print("\u001b[34m\u2022\u001b[0m")
+                    } else if (config.errored) {
+                        print("\u001b[31m\u2718\u001b[0m")  //2022 unchanged
                     } else {
                         print("\u001b[32m\u2714\u001b[0m")  //2022 unchanged
                     }
