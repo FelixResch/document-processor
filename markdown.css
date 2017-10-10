@@ -6,15 +6,7 @@ html, body {
   html .md-container, body .md-container {
     max-width: 1020px;
     margin-left: auto;
-    margin-right: auto;
-    /*ol
-     * counter-reset: section
-     * list-style-type: none
-     *
-     * li::before
-     *   counter-increment: section
-     *
-     *   content: counters(section, ".") ". " */ }
+    margin-right: auto; }
     html .md-container .md-header h1, html .md-container .md-header h2, html .md-container .md-header h3, html .md-container .md-header h4, html .md-container .md-header h5, html .md-container .md-header h6, body .md-container .md-header h1, body .md-container .md-header h2, body .md-container .md-header h3, body .md-container .md-header h4, body .md-container .md-header h5, body .md-container .md-header h6 {
       text-align: center; }
     html .md-container .md-header .md-author:not(:last-of-type)::after, body .md-container .md-header .md-author:not(:last-of-type)::after {
@@ -40,8 +32,8 @@ html, body {
       counter-increment: h2counter;
       counter-reset: h3counter; }
     html .md-container .md-body h3::before, body .md-container .md-body h3::before {
-      counter-increment: h3counter;
-      content: counter(h2counter) "." counter(h3counter) ".  "; }
+      content: counter(h2counter) "." counter(h3counter) ".  ";
+      counter-increment: h3counter; }
     html .md-container .md-body a, body .md-container .md-body a {
       color: blue; }
     html .md-container .md-body blockquote, body .md-container .md-body blockquote {
@@ -49,6 +41,18 @@ html, body {
       padding: 0 1em;
       color: #6a737d;
       border-left: 0.25em solid #dfe2e5; }
+    html .md-container .md-body p img:only-child, body .md-container .md-body p img:only-child {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 95%; }
+    html .md-container .md-body p img:only-child::after, body .md-container .md-body p img:only-child::after {
+      content: attr(title); }
+    html .md-container .md-body p code, body .md-container .md-body p code {
+      color: #c7254e;
+      background-color: #f9f2f4; }
+    html .md-container .md-body code, html .md-container .md-body code span, body .md-container .md-body code, body .md-container .md-body code span {
+      font-family: "Menlo", "Liberation Mono", "Consolas", "DejaVu Sans Mono", "Ubuntu Mono", "Courier New", "Andale Mono", "Lucida Console", monospace; }
     html .md-container .md-footer, body .md-container .md-footer {
       font-size: small; }
       html .md-container .md-footer .md-right, body .md-container .md-footer .md-right {
