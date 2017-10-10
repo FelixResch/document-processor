@@ -4,10 +4,11 @@ import com.vladsch.flexmark.ast.Node
 import com.vladsch.flexmark.ext.abbreviation.AbbreviationExtension
 import com.vladsch.flexmark.ext.footnotes.FootnoteExtension
 import com.vladsch.flexmark.ext.gfm.strikethrough.StrikethroughExtension
+import com.vladsch.flexmark.ext.gfm.strikethrough.StrikethroughSubscriptExtension
+import com.vladsch.flexmark.ext.gfm.strikethrough.SubscriptExtension
 import com.vladsch.flexmark.ext.gfm.tasklist.TaskListExtension
 import com.vladsch.flexmark.ext.ins.InsExtension
 import com.vladsch.flexmark.ext.tables.TablesExtension
-import com.vladsch.flexmark.ext.toc.SimTocExtension
 import com.vladsch.flexmark.ext.toc.TocExtension
 import com.vladsch.flexmark.ext.yaml.front.matter.YamlFrontMatterExtension
 import com.vladsch.flexmark.parser.Parser
@@ -30,8 +31,8 @@ class ParserJob(val file: ProcessableFile, parent: Job<Any>? = null, val jobCrea
                         FootnoteExtension.create(),
                         TaskListExtension.create(),
                         SuperscriptExtension.create(),
+                        StrikethroughSubscriptExtension.create(),
                         InsExtension.create(),
-                        StrikethroughExtension.create(),
                         MathExtension.create()
                 )
         )

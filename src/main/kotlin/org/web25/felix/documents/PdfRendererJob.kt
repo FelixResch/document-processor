@@ -3,6 +3,8 @@ package org.web25.felix.documents
 import com.vladsch.flexmark.ext.abbreviation.AbbreviationExtension
 import com.vladsch.flexmark.ext.footnotes.FootnoteExtension
 import com.vladsch.flexmark.ext.gfm.strikethrough.StrikethroughExtension
+import com.vladsch.flexmark.ext.gfm.strikethrough.StrikethroughSubscriptExtension
+import com.vladsch.flexmark.ext.gfm.strikethrough.SubscriptExtension
 import com.vladsch.flexmark.ext.gfm.tasklist.TaskListExtension
 import com.vladsch.flexmark.ext.ins.InsExtension
 import com.vladsch.flexmark.ext.tables.TablesExtension
@@ -38,8 +40,8 @@ class PdfRendererJob (val file: ProcessableFile, parent: Job<Any>? = null, val j
                         FootnoteExtension.create(),
                         TaskListExtension.create(),
                         SuperscriptExtension.create(),
-                        InsExtension.create(),
-                        StrikethroughExtension.create()
+                        StrikethroughSubscriptExtension.create(),
+                        InsExtension.create()
                 )
         )
 
