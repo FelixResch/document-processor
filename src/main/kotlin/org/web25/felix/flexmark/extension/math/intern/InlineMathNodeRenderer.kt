@@ -31,34 +31,39 @@ class InlineMathNodeRenderer private constructor(): NodeRenderer {
     }
 
     private fun render(node: InlineMath, context: NodeRendererContext, html: HtmlWriter) {
-        val domImpl = GenericDOMImplementation.getDOMImplementation()
-        val svgNS = "http://www.w3.org/2000/svg"
-        val document = domImpl.createDocument(svgNS, "svg", null)
-        val ctx = SVGGeneratorContext.createDefault(document)
+        try {
+            val domImpl = GenericDOMImplementation.getDOMImplementation()
+            val svgNS = "http://www.w3.org/2000/svg"
+            val document = domImpl.createDocument(svgNS, "svg", null)
+            val ctx = SVGGeneratorContext.createDefault(document)
 
-        val g2 = SVGGraphics2D(ctx, true)
+            val g2 = SVGGraphics2D(ctx, true)
 
-        DefaultTeXFont.registerAlphabet(GreekRegistration())
+            DefaultTeXFont.registerAlphabet(GreekRegistration())
 
-        val formula = TeXFormula(node.rawText.toVisibleWhitespaceString())
-        val icon = formula.createTeXIcon(TeXConstants.STYLE_DISPLAY, 20f)
-        icon.insets = Insets(0, 5, 0, 5)
-        g2.svgCanvasSize = Dimension(icon.iconWidth, icon.iconHeight)
-        g2.color = Color.white
-        g2.fillRect(0, 0, icon.iconWidth, icon.iconHeight)
+            val formula = TeXFormula(node.rawText.toVisibleWhitespaceString())
+            val icon = formula.createTeXIcon(TeXConstants.STYLE_DISPLAY, 20f)
+            icon.insets = Insets(0, 5, 0, 5)
+            g2.svgCanvasSize = Dimension(icon.iconWidth, icon.iconHeight)
+            g2.color = Color.white
+            g2.fillRect(0, 0, icon.iconWidth, icon.iconHeight)
 
-        val jLabel = JLabel().run {
-            foreground = Color.BLACK
-            this
+            val jLabel = JLabel().run {
+                foreground = Color.BLACK
+                this
+            }
+
+            icon.paintIcon(jLabel, g2, 0, 0)
+
+            val buffer = ByteArrayOutputStream()
+            g2.stream(OutputStreamWriter(buffer), true)
+            html.withAttr().tag("img")
+            html.raw(buffer.toString())
+            html.tag("/img")
+        } catch (t: Throwable) {
+            t.printStackTrace()
+            html.raw(node.rawText)
         }
-
-        icon.paintIcon(jLabel, g2, 0, 0)
-
-        val buffer = ByteArrayOutputStream()
-        g2.stream(OutputStreamWriter(buffer), true)
-        html.withAttr().tag("img")
-        html.raw(buffer.toString())
-        html.tag("/img")
     }
 
     class Factory : NodeRendererFactory {

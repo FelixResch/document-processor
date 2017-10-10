@@ -48,6 +48,10 @@
     <orderEntry type="library" name="Gradle: org.scilab.forge:jlatexmath:1.0.6" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.xmlgraphics:batik-svggen:1.9.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.xmlgraphics:batik-dom:1.9.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.openhtmltopdf:openhtmltopdf-core:0.0.1-RC11" level="project" />
+    <orderEntry type="library" name="Gradle: com.openhtmltopdf:openhtmltopdf-pdfbox:0.0.1-RC11" level="project" />
+    <orderEntry type="library" name="Gradle: com.openhtmltopdf:openhtmltopdf-jsoup-dom-converter:0.0.1-RC11" level="project" />
+    <orderEntry type="library" name="Gradle: com.openhtmltopdf:openhtmltopdf-svg-support:0.0.1-RC11" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.7.1-1" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.module:jackson-module-kotlin:2.7.1-2" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.7.1" level="project" />
@@ -87,7 +91,6 @@
     <orderEntry type="library" name="Gradle: ognl:ognl:3.1.12" level="project" />
     <orderEntry type="library" name="Gradle: org.attoparser:attoparser:2.0.4.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.unbescape:unbescape:1.1.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: com.openhtmltopdf:openhtmltopdf-core:0.0.1-RC11" level="project" />
     <orderEntry type="library" name="Gradle: org.scilab.forge:jlatexmath-font-greek:1.0.6" level="project" />
     <orderEntry type="library" name="Gradle: org.scilab.forge:jlatexmath-font-cyrillic:1.0.6" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.xmlgraphics:batik-awt-util:1.9.1" level="project" />
@@ -98,24 +101,30 @@
     <orderEntry type="library" name="Gradle: xalan:xalan:2.7.2" level="project" />
     <orderEntry type="library" name="Gradle: xml-apis:xml-apis:1.3.04" level="project" />
     <orderEntry type="library" name="Gradle: xml-apis:xml-apis-ext:1.3.04" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.pdfbox:pdfbox:2.0.5" level="project" />
+    <orderEntry type="library" name="Gradle: de.rototor.pdfbox:graphics2d:0.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.xmlgraphics:batik-transcoder:1.8" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.7.1" level="project" />
     <orderEntry type="library" name="Gradle: org.yaml:snakeyaml:1.15" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains:annotations:13.0" level="project" />
     <orderEntry type="library" name="Gradle: org.nibor.autolink:autolink:0.6.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.jsoup:jsoup:1.10.2" level="project" />
-    <orderEntry type="library" name="Gradle: com.openhtmltopdf:openhtmltopdf-pdfbox:0.0.1-RC9" level="project" />
     <orderEntry type="library" name="Gradle: com.openhtmltopdf:openhtmltopdf-rtl-support:0.0.1-RC9" level="project" />
-    <orderEntry type="library" name="Gradle: com.openhtmltopdf:openhtmltopdf-jsoup-dom-converter:0.0.1-RC9" level="project" />
     <orderEntry type="library" name="Gradle: org.javassist:javassist:3.20.0-GA" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.xmlgraphics:xmlgraphics-commons:2.2" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.xmlgraphics:batik-constants:1.9.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.xmlgraphics:batik-i18n:1.9.1" level="project" />
     <orderEntry type="library" name="Gradle: xalan:serializer:2.7.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.pdfbox:pdfbox:2.0.4" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.xmlgraphics:batik-anim:1.8" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.xmlgraphics:batik-bridge:1.8" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.xmlgraphics:batik-gvt:1.8" level="project" />
     <orderEntry type="library" name="Gradle: com.ibm.icu:icu4j:58.1" level="project" />
-    <orderEntry type="library" name="Gradle: commons-io:commons-io:1.3.1" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.pdfbox:fontbox:2.0.4" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.xmlgraphics:batik-parser:1.8" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.xmlgraphics:batik-svg-dom:1.8" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.xmlgraphics:batik-script:1.8" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.7.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.jsoup:jsoup:1.10.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.pdfbox:fontbox:2.0.5" level="project" />
     <orderEntry type="library" name="Gradle: commons-logging:commons-logging:1.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.xmlgraphics:xmlgraphics-commons:2.2" level="project" />
+    <orderEntry type="library" name="Gradle: commons-io:commons-io:1.3.1" level="project" />
   </component>
 </module>

@@ -56,7 +56,14 @@ dependencies {
     compile group: 'org.apache.xmlgraphics', name: 'batik-svggen', version: '1.9.1'
     // https://mvnrepository.com/artifact/org.apache.xmlgraphics/batik-dom
     compile group: 'org.apache.xmlgraphics', name: 'batik-dom', version: '1.9.1'
-
+    // https://mvnrepository.com/artifact/com.openhtmltopdf/openhtmltopdf-core
+    compile group: 'com.openhtmltopdf', name: 'openhtmltopdf-core', version: '0.0.1-RC11'
+    // https://mvnrepository.com/artifact/com.openhtmltopdf/openhtmltopdf-pdfbox
+    compile group: 'com.openhtmltopdf', name: 'openhtmltopdf-pdfbox', version: '0.0.1-RC11'
+    // https://mvnrepository.com/artifact/com.openhtmltopdf/openhtmltopdf-jsoup-dom-converter
+    compile group: 'com.openhtmltopdf', name: 'openhtmltopdf-jsoup-dom-converter', version: '0.0.1-RC11'
+    // https://mvnrepository.com/artifact/com.openhtmltopdf/openhtmltopdf-svg-support
+    compile group: 'com.openhtmltopdf', name: 'openhtmltopdf-svg-support', version: '0.0.1-RC11'
 
 
     compile 'com.fasterxml.jackson.core:jackson-databind:2.7.1-1'
