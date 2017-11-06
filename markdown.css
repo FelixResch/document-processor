@@ -27,13 +27,15 @@ html, body {
         background-color: #efefef; }
     html .md-container .md-body h1, body .md-container .md-body h1 {
       counter-reset: h2counter; }
-    html .md-container .md-body h2::before, body .md-container .md-body h2::before {
-      content: counter(h2counter) ".  ";
+    html .md-container .md-body h2, body .md-container .md-body h2 {
       counter-increment: h2counter;
       counter-reset: h3counter; }
-    html .md-container .md-body h3::before, body .md-container .md-body h3::before {
-      content: counter(h2counter) "." counter(h3counter) ".  ";
+    html .md-container .md-body h2::before, body .md-container .md-body h2::before {
+      content: counter(h2counter) ".  "; }
+    html .md-container .md-body h3, body .md-container .md-body h3 {
       counter-increment: h3counter; }
+    html .md-container .md-body h3::before, body .md-container .md-body h3::before {
+      content: counter(h2counter) "." counter(h3counter) ".  "; }
     html .md-container .md-body a, body .md-container .md-body a {
       color: blue; }
     html .md-container .md-body blockquote, body .md-container .md-body blockquote {

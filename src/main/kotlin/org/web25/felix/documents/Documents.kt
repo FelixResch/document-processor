@@ -113,9 +113,27 @@ class Documents(val args: Array<String>) {
                     parseMarkdown(it) {
                         visitFrontmatter(it) {
                             renderMarkdownToHtml(it) {
-                                write(it) {
+                                write(it, {
+                                    val dst = this.dst
+                                    val documentConfig = this.getConfig(FrontmatterData::class)
+                                    if (dst != null) {
+                                        val versionDst = File(dst.parentFile, dst.nameWithoutExtension + "-" + documentConfig.data["version"]?.first() + "." + dst.extension)
+                                        listOf(dst, versionDst)
+                                    } else {
+                                        listOf()
+                                    }
+                                }) {
                                     renderMarkdownToPdf(it) {
-                                        write(it)
+                                        write(it, filenameCreator = {
+                                            val dst = this.dst
+                                            val documentConfig = this.getConfig(FrontmatterData::class)
+                                            if (dst != null) {
+                                                val versionDst = File(dst.parentFile, dst.nameWithoutExtension + "-" + documentConfig.data["version"]?.first() + "." + dst.extension)
+                                                listOf(versionDst)
+                                            } else {
+                                                listOf()
+                                            }
+                                        })
                                     }
                                 }
                             }

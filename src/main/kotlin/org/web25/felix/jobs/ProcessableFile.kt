@@ -32,11 +32,8 @@ class ProcessableFile(val src: File) {
         this.config[config::class] = config
     }
 
-    fun write() {
-        val dst = this.dst
-        if(dst != null) {
-            dst.writeBytes(content)
-        }
+    fun write(it: File) {
+        it.writeBytes(content)
     }
 
 }
