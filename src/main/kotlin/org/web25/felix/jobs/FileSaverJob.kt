@@ -19,13 +19,12 @@ class FileSaverJob (val processableFile: ProcessableFile, val destFiles: List<Fi
 }
 
 fun write(processableFile: ProcessableFile, filenameCreator: ProcessableFile.() -> List<File?> = { listOf(dst) },  jobCreator: JobCreator? = null): FileSaverJob {
-    val files: List<File>
-    try {
-        files = processableFile.filenameCreator().filter { it != null }.map {
+    val files = try {
+        processableFile.filenameCreator().filter { it != null }.map {
             it!!
         }
     } catch (t: Throwable) {
-        files = listOf(processableFile.dst)
+        listOf(processableFile.dst!!)
     }
     return FileSaverJob(processableFile, files, jobCreator = jobCreator)
 }

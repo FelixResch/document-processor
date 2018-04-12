@@ -65,6 +65,12 @@
         .md-header h1, .md-header h2 {
             text-align: center;
         }
+
+        html .md-container .md-body p code, body .md-container .md-body p code {
+            color: #c7254e;
+            background-color: #f9f2f4; }
+        html .md-container .md-body code, html .md-container .md-body code span, body .md-container .md-body code, body .md-container .md-body code span {
+            font-family: "Menlo", "Liberation Mono", "Consolas", "DejaVu Sans Mono", "Ubuntu Mono", "Courier New", "Andale Mono", "Lucida Console", monospace; }
     </style>
     <!--/*@thymesVar id="version" type="String"*/-->
     <style th:if="${version}">

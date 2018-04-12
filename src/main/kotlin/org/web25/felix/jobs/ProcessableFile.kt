@@ -17,6 +17,12 @@ class ProcessableFile(val src: File) {
         content = value.toByteArray()
     }
 
+    fun copyConfig(file: ProcessableFile) {
+        file.config.forEach { kClass, config ->
+            this.config[kClass] = config
+        }
+    }
+
     var config: MutableMap<KClass<*>, Config> = mutableMapOf()
 
     fun <T: Config> getConfig(kClass: KClass<T>): T {

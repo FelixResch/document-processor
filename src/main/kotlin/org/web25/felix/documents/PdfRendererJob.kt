@@ -102,6 +102,7 @@ class PdfRendererJob (val file: ProcessableFile, parent: Job<Any>? = null, val j
         }
 
         val pdf = ProcessableFile(file.src)
+        pdf.copyConfig(file)
 
         pdf.stringContent = templatingEngine.process("markdown_pdf", context)
 
