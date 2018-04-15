@@ -10,5 +10,5 @@ if [ $# -eq 1 ]; then
             echo Unknown operation $1 ;;
     esac
 else
-    java -jar build/libs/documents-0.0.1-SNAPSHOT.jar -d ~/Documents/documents/ -t 4
+    java -Dfile.encoding=UTF-8 -jar build/libs/documents-0.0.1-SNAPSHOT.jar -d ~/Documents/tu-documents/ -t 4
 fi

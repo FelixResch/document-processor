@@ -1,5 +1,6 @@
 package org.web25.felix.documents
 
+import com.openhtmltopdf.DOMBuilder
 import com.vladsch.flexmark.ext.abbreviation.AbbreviationExtension
 import com.vladsch.flexmark.ext.footnotes.FootnoteExtension
 import com.vladsch.flexmark.ext.gfm.strikethrough.StrikethroughExtension
@@ -23,6 +24,17 @@ import org.web25.felix.flexmark.extension.math.MathExtension
 import org.web25.felix.jobs.*
 import java.io.ByteArrayOutputStream
 import java.io.File
+import java.io.IOException
+import com.sun.xml.internal.ws.streaming.XMLStreamReaderUtil.close
+import com.openhtmltopdf.DOMBuilder.jsoup2DOM
+import org.jsoup.Jsoup
+import com.openhtmltopdf.bidi.support.ICUBidiReorderer
+import com.openhtmltopdf.bidi.support.ICUBidiSplitter
+import com.openhtmltopdf.outputdevice.helper.BaseRendererBuilder
+import com.openhtmltopdf.pdfboxout.PdfRendererBuilder
+import com.openhtmltopdf.swing.NaiveUserAgent
+import java.io.OutputStream
+
 
 class PdfRendererJob (val file: ProcessableFile, parent: Job<Any>? = null, val jobCreator: JobCreator?) : AbstractJob<Unit>(parent) {
 
@@ -110,9 +122,11 @@ class PdfRendererJob (val file: ProcessableFile, parent: Job<Any>? = null, val j
 
         pdf.dst = File(file.src.parentFile, file.src.nameWithoutExtension + ".pdf")
 
-        PdfConverterExtension.exportToPdf(buffer, pdf.stringContent, "", MutableDataSet())
+
+        exportToPdf(buffer, pdf.stringContent, "", BaseRendererBuilder.TextDirection.LTR, file.src.parentFile)
 
         pdf.content = buffer.toByteArray()
+        pdf.addConfig(frontmatter)
 
 
         fileWatcherConfig.done = true
@@ -122,6 +136,44 @@ class PdfRendererJob (val file: ProcessableFile, parent: Job<Any>? = null, val j
         }
     }
 
+}
+
+fun exportToPdf(os: OutputStream, html: String, url: String, defaultTextDirection: BaseRendererBuilder.TextDirection?, workingDirectory: File) {
+    try {
+        // There are more options on the builder than shown below.
+        val builder = PdfRendererBuilder()
+
+        if (defaultTextDirection != null) {
+            builder.useUnicodeBidiSplitter(ICUBidiSplitter.ICUBidiSplitterFactory())
+            builder.useUnicodeBidiReorderer(ICUBidiReorderer())
+            builder.defaultTextDirection(defaultTextDirection) // OR RTL
+            builder.useUriResolver { _, uri ->
+                val file = File(workingDirectory, uri)
+                if(file.exists() && file.isFile) {
+                    file.absoluteFile.toURI().toString()
+                } else {
+                    null
+                }
+            }
+        }
+
+        val doc = Jsoup.parse(html)
+
+        val dom = DOMBuilder.jsoup2DOM(doc)
+        builder.withW3cDocument(dom, url)
+        builder.toStream(os)
+        builder.run()
+    } catch (e: Exception) {
+        e.printStackTrace()
+        // LOG exception
+    } finally {
+        try {
+            os.close()
+        } catch (e: IOException) {
+            // swallow
+        }
+
+    }
 }
 
 fun renderMarkdownToPdf(processableFile: ProcessableFile, jobCreator: JobCreator?): PdfRendererJob {

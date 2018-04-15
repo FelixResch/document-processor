@@ -50,11 +50,28 @@ html, body {
       max-width: 95%; }
     html .md-container .md-body p img:only-child::after, body .md-container .md-body p img:only-child::after {
       content: attr(title); }
-    html .md-container .md-body p code, body .md-container .md-body p code {
+    html .md-container .md-body code, html .md-container .md-body code span, body .md-container .md-body code, body .md-container .md-body code span {
+      font-family: "Menlo", "Liberation Mono", "Consolas", "DejaVu Sans Mono", "Ubuntu Mono", "Courier New", "Andale Mono", "Lucida Console", monospace;
       color: #c7254e;
       background-color: #f9f2f4; }
-    html .md-container .md-body code, html .md-container .md-body code span, body .md-container .md-body code, body .md-container .md-body code span {
-      font-family: "Menlo", "Liberation Mono", "Consolas", "DejaVu Sans Mono", "Ubuntu Mono", "Courier New", "Andale Mono", "Lucida Console", monospace; }
+    html .md-container .md-body pre, body .md-container .md-body pre {
+      padding: 10px 15px;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.15);
+      border-radius: 3px;
+      overflow-x: auto;
+      margin: 20px 0;
+      background-color: rgba(238, 238, 238, 0.35); }
+      html .md-container .md-body pre code, body .md-container .md-body pre code {
+        border-color: transparent;
+        color: inherit;
+        background-color: transparent;
+        word-wrap: normal;
+        word-break: normal;
+        white-space: pre;
+        padding: 0;
+        font-size: inherit;
+        border-radius: 0; }
     html .md-container .md-footer, body .md-container .md-footer {
       font-size: small; }
       html .md-container .md-footer .md-right, body .md-container .md-footer .md-right {

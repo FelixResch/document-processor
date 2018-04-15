@@ -2,11 +2,17 @@ group 'org.web25.felix'
 version '0.0.1-SNAPSHOT'
 
 buildscript {
+    ext.flexmark_version = '0.32.20'
+    ext.jackson_version = '2.9.2'
+    ext.openhtmltopdf_version = "0.0.1-RC13"
+    ext.jlatexmath_version = "1.0.6"
+    ext.batik_version = "1.9.1"
+    ext.thymeleaf_version = "3.0.9.RELEASE"
     ext.kotlin_version = '1.2.31'
-    ext.flexmark_version = '0.27.0'
 
     repositories {
         mavenCentral()
+        maven { url 'https://dl.bintray.com/kotlin/kotlin-dev' }
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
@@ -15,8 +21,6 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'kotlin'
-
-sourceCompatibility = 1.8
 
 task fatJar(type: Jar) {
     manifest {
@@ -31,10 +35,11 @@ task fatJar(type: Jar) {
 
 repositories {
     mavenCentral()
+    maven { url 'https://dl.bintray.com/kotlin/kotlin-dev' }
 }
 
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
     compile "com.vladsch.flexmark:flexmark-all:$flexmark_version"
 
@@ -51,37 +56,28 @@ dependencies {
     // https://mvnrepository.com/artifact/commons-cli/commons-cli
     compile group: 'commons-cli', name: 'commons-cli', version: '1.4'
     // https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf
-    compile group: 'org.thymeleaf', name: 'thymeleaf', version: '3.0.7.RELEASE'
+    compile group: 'org.thymeleaf', name: 'thymeleaf', version: thymeleaf_version
     // https://mvnrepository.com/artifact/com.openhtmltopdf/openhtmltopdf-slf4j
-    compile group: 'com.openhtmltopdf', name: 'openhtmltopdf-slf4j', version: '0.0.1-RC11'
+    compile group: 'com.openhtmltopdf', name: 'openhtmltopdf-slf4j', version: openhtmltopdf_version
     // https://mvnrepository.com/artifact/org.scilab.forge/jlatexmath
-    compile group: 'org.scilab.forge', name: 'jlatexmath', version: '1.0.6'
+    compile group: 'org.scilab.forge', name: 'jlatexmath', version: jlatexmath_version
     // https://mvnrepository.com/artifact/org.apache.xmlgraphics/batik-svggen
-    compile group: 'org.apache.xmlgraphics', name: 'batik-svggen', version: '1.9.1'
+    compile group: 'org.apache.xmlgraphics', name: 'batik-svggen', version: batik_version
     // https://mvnrepository.com/artifact/org.apache.xmlgraphics/batik-dom
-    compile group: 'org.apache.xmlgraphics', name: 'batik-dom', version: '1.9.1'
+    compile group: 'org.apache.xmlgraphics', name: 'batik-dom', version: batik_version
     // https://mvnrepository.com/artifact/com.openhtmltopdf/openhtmltopdf-core
-    compile group: 'com.openhtmltopdf', name: 'openhtmltopdf-core', version: '0.0.1-RC11'
+    compile group: 'com.openhtmltopdf', name: 'openhtmltopdf-core', version: openhtmltopdf_version
     // https://mvnrepository.com/artifact/com.openhtmltopdf/openhtmltopdf-pdfbox
-    compile group: 'com.openhtmltopdf', name: 'openhtmltopdf-pdfbox', version: '0.0.1-RC11'
+    compile group: 'com.openhtmltopdf', name: 'openhtmltopdf-pdfbox', version: openhtmltopdf_version
     // https://mvnrepository.com/artifact/com.openhtmltopdf/openhtmltopdf-jsoup-dom-converter
-    compile group: 'com.openhtmltopdf', name: 'openhtmltopdf-jsoup-dom-converter', version: '0.0.1-RC11'
+    compile group: 'com.openhtmltopdf', name: 'openhtmltopdf-jsoup-dom-converter', version: openhtmltopdf_version
     // https://mvnrepository.com/artifact/com.openhtmltopdf/openhtmltopdf-svg-support
-    compile group: 'com.openhtmltopdf', name: 'openhtmltopdf-svg-support', version: '0.0.1-RC11'
+    compile group: 'com.openhtmltopdf', name: 'openhtmltopdf-svg-support', version: openhtmltopdf_version
 
 
-    compile 'com.fasterxml.jackson.core:jackson-databind:2.7.1-1'
-    compile 'com.fasterxml.jackson.module:jackson-module-kotlin:2.7.1-2'
-    compile 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.7.1'
-
-    // https://mvnrepository.com/artifact/com.openhtmltopdf/openhtmltopdf-core
-    compile group: 'com.openhtmltopdf', name: 'openhtmltopdf-core', version: '0.0.1-RC11'
-    // https://mvnrepository.com/artifact/com.openhtmltopdf/openhtmltopdf-pdfbox
-    compile group: 'com.openhtmltopdf', name: 'openhtmltopdf-pdfbox', version: '0.0.1-RC11'
-    // https://mvnrepository.com/artifact/com.openhtmltopdf/openhtmltopdf-jsoup-dom-converter
-    compile group: 'com.openhtmltopdf', name: 'openhtmltopdf-jsoup-dom-converter', version: '0.0.1-RC11'
-    // https://mvnrepository.com/artifact/com.openhtmltopdf/openhtmltopdf-svg-support
-    compile group: 'com.openhtmltopdf', name: 'openhtmltopdf-svg-support', version: '0.0.1-RC11'
+    compile "com.fasterxml.jackson.core:jackson-databind:$jackson_version"
+    compile "com.fasterxml.jackson.module:jackson-module-kotlin:$jackson_version"
+    compile "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:$jackson_version"
 
 
 

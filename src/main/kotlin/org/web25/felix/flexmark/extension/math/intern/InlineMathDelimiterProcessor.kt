@@ -10,7 +10,12 @@ import org.web25.felix.flexmark.extension.math.InlineMath
 
 class InlineMathDelimiterProcessor : DelimiterProcessor {
 
-    override fun canBeCloser(leftFlanking: Boolean, rightFlanking: Boolean, beforeIsPunctuation: Boolean, afterIsPunctuation: Boolean, beforeIsWhitespace: Boolean, afterIsWhiteSpace: Boolean): Boolean = rightFlanking
+
+    override fun canBeCloser(before: String?, after: String?, leftFlanking: Boolean, rightFlanking: Boolean, beforeIsPunctuation: Boolean, afterIsPunctuation: Boolean, beforeIsWhitespace: Boolean, afterIsWhiteSpace: Boolean): Boolean = rightFlanking
+
+    override fun canBeOpener(before: String?, after: String?, leftFlanking: Boolean, rightFlanking: Boolean, beforeIsPunctuation: Boolean, afterIsPunctuation: Boolean, beforeIsWhitespace: Boolean, afterIsWhiteSpace: Boolean): Boolean = leftFlanking
+
+    override fun skipNonOpenerCloser(): Boolean = true
 
     override fun getClosingCharacter(): Char = '$'
 
@@ -25,8 +30,6 @@ class InlineMathDelimiterProcessor : DelimiterProcessor {
     }
 
     override fun getMinLength(): Int = 2
-
-    override fun canBeOpener(leftFlanking: Boolean, rightFlanking: Boolean, beforeIsPunctuation: Boolean, afterIsPunctuation: Boolean, beforeIsWhitespace: Boolean, afterIsWhiteSpace: Boolean): Boolean = leftFlanking
 
     override fun getOpeningCharacter(): Char = '$'
 

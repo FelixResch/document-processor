@@ -66,11 +66,92 @@
             text-align: center;
         }
 
-        html .md-container .md-body p code, body .md-container .md-body p code {
+        html, body {
+            counter-reset: h2counter;
+            font-family: "Noto Sans", sans-serif;
+            background-color: white; }
+        html .md-container, body .md-container {
+            max-width: 1020px;
+            margin-left: auto;
+            margin-right: auto; }
+        html .md-container .md-header h1, html .md-container .md-header h2, html .md-container .md-header h3, html .md-container .md-header h4, html .md-container .md-header h5, html .md-container .md-header h6, body .md-container .md-header h1, body .md-container .md-header h2, body .md-container .md-header h3, body .md-container .md-header h4, body .md-container .md-header h5, body .md-container .md-header h6 {
+            text-align: center; }
+        html .md-container .md-header .md-author:not(:last-of-type)::after, body .md-container .md-header .md-author:not(:last-of-type)::after {
+            content: ", "; }
+        html .md-container .md-body table, body .md-container .md-body table {
+            width: 100%;
+            border-collapse: collapse;
+            border-color: #adadad; }
+        html .md-container .md-body table tr, body .md-container .md-body table tr {
+            border: 1px solid #adadad; }
+        html .md-container .md-body table tr td, html .md-container .md-body table tr th, body .md-container .md-body table tr td, body .md-container .md-body table tr th {
+            border: 1px solid #adadad;
+            padding: 8px; }
+        html .md-container .md-body table tr th, body .md-container .md-body table tr th {
+            text-align: start;
+            background-color: #ffffff; }
+        html .md-container .md-body table tbody tr:nth-child(odd), body .md-container .md-body table tbody tr:nth-child(odd) {
+            background-color: #efefef; }
+        html .md-container .md-body h1, body .md-container .md-body h1 {
+            counter-reset: h2counter; }
+        html .md-container .md-body h2, body .md-container .md-body h2 {
+            counter-increment: h2counter;
+            counter-reset: h3counter; }
+        html .md-container .md-body h2::before, body .md-container .md-body h2::before {
+            content: counter(h2counter) ".  "; }
+        html .md-container .md-body h3, body .md-container .md-body h3 {
+            counter-increment: h3counter; }
+        html .md-container .md-body h3::before, body .md-container .md-body h3::before {
+            content: counter(h2counter) "." counter(h3counter) ".  "; }
+        html .md-container .md-body a, body .md-container .md-body a {
+            color: blue; }
+        html .md-container .md-body blockquote, body .md-container .md-body blockquote {
+            margin: 0 0 16px;
+            padding: 0 1em;
+            color: #6a737d;
+            border-left: 0.25em solid #dfe2e5; }
+        html .md-container .md-body p img:only-child, body .md-container .md-body p img:only-child {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 95%; }
+        html .md-container .md-body p img:only-child::after, body .md-container .md-body p img:only-child::after {
+            content: attr(title); }
+        html .md-container .md-body code, html .md-container .md-body code span, body .md-container .md-body code, body .md-container .md-body code span {
+            font-family: "Menlo", "Liberation Mono", "Consolas", "DejaVu Sans Mono", "Ubuntu Mono", "Courier New", "Andale Mono", "Lucida Console", monospace;
             color: #c7254e;
             background-color: #f9f2f4; }
-        html .md-container .md-body code, html .md-container .md-body code span, body .md-container .md-body code, body .md-container .md-body code span {
-            font-family: "Menlo", "Liberation Mono", "Consolas", "DejaVu Sans Mono", "Ubuntu Mono", "Courier New", "Andale Mono", "Lucida Console", monospace; }
+        html .md-container .md-body pre, body .md-container .md-body pre {
+            padding: 10px 15px;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.15);
+            border-radius: 3px;
+            overflow-x: auto;
+            margin: 20px 0;
+            background-color: rgba(238, 238, 238, 0.35); }
+        html .md-container .md-body pre code, body .md-container .md-body pre code {
+            border-color: transparent;
+            color: inherit;
+            background-color: transparent;
+            word-wrap: normal;
+            word-break: normal;
+            white-space: pre;
+            padding: 0;
+            font-size: inherit;
+            border-radius: 0; }
+        html .md-container .md-footer, body .md-container .md-footer {
+            font-size: small; }
+        html .md-container .md-footer .md-right, body .md-container .md-footer .md-right {
+            float: right;
+            display: inline-block; }
+        html .md-container .md-footer .md-left, body .md-container .md-footer .md-left {
+            float: left;
+            display: inline-block; }
+        html .md-container img {
+            max-width: 85%;
+            width: fit-content;
+            float: center;
+        }
     </style>
     <!--/*@thymesVar id="version" type="String"*/-->
     <style th:if="${version}">
